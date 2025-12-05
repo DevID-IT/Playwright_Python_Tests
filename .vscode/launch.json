@@ -1,0 +1,46 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Pytest – All Browsers (default)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "pytest",
+      "args": [],
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Pytest – Chromium Only",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "pytest",
+      "args": [
+        "--browser",
+        "chromium"
+      ],
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Pytest – Firefox Only",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "pytest",
+      "args": [
+        "--browser",
+        "firefox"
+      ],
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Pytest – WebKit Only",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "pytest",
+      "args": [
+        "--browser",
+        "webkit"
+      ],
+      "console": "integratedTerminal"
+    }
+  ]
+}
