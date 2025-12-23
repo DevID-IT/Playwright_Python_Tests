@@ -1,6 +1,5 @@
 import allure
 from playwright.sync_api import expect
-import pytest
 from faker import Faker
 
 
@@ -24,7 +23,6 @@ class TestRegister:
         expect(self.page).to_have_url(expect_url)
         expect(self.page.locator("#rightPanel > h1.title")).to_have_text(f"Welcome {username}")
         expect(self.page.locator("#rightPanel > p")).to_have_text("Your account was created successfully. You are now logged in.")
-        self.faker = Faker()
 
     @allure.title("Przypadek 02 - Rejestracja z istniejącym loginem")
     @allure.description("Test służy sprawdzeniu czy wpisując istniejący login użytkownik dostanie informację o błędzie")
@@ -38,7 +36,6 @@ class TestRegister:
         expect_url = "https://parabank.parasoft.com/parabank/register.htm"
         expect(self.page).to_have_url(expect_url)
         expect(self.page.locator("span[id='customer.username.errors']")).to_have_text(f"This username already exists.")
-        self.faker = Faker()
 
     @allure.title("Przypadek 03 - Rejestracja z pustymi polami")
     @allure.description("Test służy sprawdzeniu czy wszystkie pola obowiązkowe są sprawdzane podczas rejestracji")
